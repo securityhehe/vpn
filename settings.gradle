@@ -1,0 +1,35 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            credentials {
+                username '618b9a782e36e4d0e5fd189b'
+                password 'mrYfPDvCkfk0'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2154604-release-Fowc7L/'
+        }
+        maven {
+            credentials {
+                username '618b9a782e36e4d0e5fd189b'
+                password 'mrYfPDvCkfk0'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2154604-snapshot-eZnJFY/'
+        }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+rootProject.name = "VPN"
+include ':app'
+include ':vpnLib'

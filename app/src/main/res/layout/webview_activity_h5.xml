@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <com.vpn.base.VpnToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+         <TextView
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <ImageButton
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_gravity="left"
+            android:id="@+id/navbar_right"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/flag_svpn_country" />
+    </com.vpn.base.VpnToolbar>
+    <WebView
+        android:id="@+id/web_h5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</LinearLayout>

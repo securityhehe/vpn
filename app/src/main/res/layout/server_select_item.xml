@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/serverItemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:layout_marginStart="17dp"
+    android:layout_marginEnd="17dp"
+    android:layout_marginTop="18dp"
+    android:background="@drawable/server_select_bg"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_marginStart="17dp"
+        android:id="@+id/iconImg"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/flag_usa" />
+
+    <TextView
+        android:id="@+id/countryTv"
+        android:layout_width="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_weight="1"
+        android:text="united kingdom"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+
+    <RadioButton
+        android:id="@+id/radio"
+        android:checked="false"
+        android:clickable="false"
+        android:buttonTint="@color/btn_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>
