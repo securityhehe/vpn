@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="134dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@mipmap/private_logo" />
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        android:layout_width="273dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="44dp"
+        android:gravity="center"
+        android:text="Private-Fast\nProxy"
+        android:textColor="#ffffffff"
+        android:textSize="33sp" />
+
+    <TextView
+        android:id="@+id/private_desc"
+        android:layout_marginBottom="170dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:text="By pressing the continue button, you agree with our "
+        android:textColor="#fff"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/private_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/private_desc"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="privacy policy"
+        android:gravity="bottom|center_horizontal"
+        android:textColor="#ffb1a0f4"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="67dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btn"
+        android:textColor="#ffffffff"
+        android:textSize="16sp"
+        android:text="Agree &amp; Contionue"
+        android:background="@drawable/main_btn_bg"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="59dp"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

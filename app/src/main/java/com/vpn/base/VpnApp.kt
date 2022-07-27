@@ -3,6 +3,7 @@ package com.vpn.base
 import android.app.Application
 import android.util.Log
 import com.vpn.BuildConfig
+import com.vpn.bean.Server
 import com.zdu.kt.KtHttpClient
 import com.zdu.lib.HttpClient
 import com.zdu.lib.IConfigValue
@@ -12,6 +13,7 @@ class VpnApp : Application() {
 
     companion object{
         var app: VpnApp? = null
+        val serveData = SingleLiveEvent<Server?>()
     }
 
     override fun onCreate() {

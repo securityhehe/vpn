@@ -1,99 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingLeft="10dp"
-    android:paddingBottom="5dp">
-
+    android:paddingBottom="5dp"
+    android:background="#282734">
     <LinearLayout
+        android:id="@+id/content"
+        android:background="@drawable/main_flag_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="54dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/connectionStatus">
+        android:layout_height="53dp">
 
-        <TextView
-            android:id="@+id/logTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:textColor="@color/colorWhite" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/connectionStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical">
-
-        <TextView
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_marginStart="23dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/main_logo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Connection Status"
-            android:textColor="@color/colorWhite"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
+            android:layout_height="wrap_content"/>
         <TextView
-            android:id="@+id/durationTv"
+            android:layout_marginStart="13dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Custom server"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            />
+        <ImageView
+            android:layout_marginEnd="26dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/main_go"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Duration: 00:00:00"
-            android:textColor="@color/colorWhite"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/lastPacketReceiveTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Packet Received:"
-            android:textColor="@color/colorWhite"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/byteInTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Bytes In: "
-            android:textColor="@color/colorWhite"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/byteOutTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Bytes OUT: "
-            android:textColor="@color/colorWhite"
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/vpnBtn"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/button"
-            android:tag="1"
-            android:text="Connect"
-            android:textColor="@color/colorWhite"
-            android:textSize="16sp" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/selectedServerIcon"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/flag_usa" />
-</RelativeLayout>
+        android:id="@+id/state"
+        android:layout_marginTop="74dp"
+        android:src="@mipmap/main_connect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:enabled="false"
+        android:clickable="false"
+        android:id="@+id/state_text"
+        android:padding="32dp"
+        android:textColor="#fff"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:text="@string/connect"
+        app:layout_constraintEnd_toEndOf="@id/state"
+        app:layout_constraintStart_toStartOf="@id/state"
+        app:layout_constraintBottom_toBottomOf="@id/state"
+        app:layout_constraintTop_toTopOf="@id/state"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,12 +29,17 @@ import com.vpn.utils.Utils
 class MainActivity : SetActionBarActivity(), NavItemClickListener {
 
     private val transaction = supportFragmentManager.beginTransaction()
-    private lateinit var fragment: Fragment
-
+    private lateinit var fragment: MainFragment
+    private var serverUtils = ServiceUtils(this)
     private var menuList: ArrayList<MenuItem> = arrayListOf(
         MenuItem(R.mipmap.main_menu_share, R.string.menu_share, R.mipmap.menu_go, SHARE),
         MenuItem(R.mipmap.main_menu_faq, R.string.menu_faq, R.mipmap.menu_go, FAQ),
-        MenuItem(R.mipmap.main_menu_privcy_private, R.string.menu_privacy_policy, R.mipmap.menu_go, PRIVACY_POLICY),
+        MenuItem(
+            R.mipmap.main_menu_privcy_private,
+            R.string.menu_privacy_policy,
+            R.mipmap.menu_go,
+            PRIVACY_POLICY
+        ),
         MenuItem(R.mipmap.main_menu_info, R.string.menu_about, R.mipmap.menu_go, ABOUT),
         MenuItem(R.mipmap.main_menu_logout, R.string.menu_exit, R.mipmap.menu_go, EXIT)
     )
@@ -45,8 +50,10 @@ class MainActivity : SetActionBarActivity(), NavItemClickListener {
         super.onCreate(savedInstanceState)
         mVH = MainActivityBinding.inflate(LayoutInflater.from(this))
         setContentView(mVH.root)
+        serverUtils.attachLifecycleOwner(this);
         supportActionBar?.hide()
         fragment = MainFragment()
+        fragment.ser = serverUtils;
         transaction.add(R.id.container, fragment)
         transaction.commit()
         mVH.content.toolbar.navbarLeft.setOnClickListener { closeDrawer() }
@@ -91,7 +98,7 @@ class MainActivity : SetActionBarActivity(), NavItemClickListener {
                 startActivity(intent)
             }
             EXIT -> {
-              exit()
+                exit()
             }
         }
     }
@@ -106,7 +113,7 @@ class MainActivity : SetActionBarActivity(), NavItemClickListener {
     }
 
     //退出弹出
-    private fun exit(){
+    private fun exit() {
         createLogoutDialog().show()
     }
 
@@ -114,7 +121,8 @@ class MainActivity : SetActionBarActivity(), NavItemClickListener {
         val dialog = Dialog(this)
         val inflate = LayoutInflater.from(this).inflate(R.layout.logout_dialog, null)
         val bind = LogoutDialogBinding.bind(inflate)
-        val layoutParams = ViewGroup.LayoutParams(Utils.dip2px(this,315f), ViewGroup.LayoutParams.WRAP_CONTENT)
+        val layoutParams =
+            ViewGroup.LayoutParams(Utils.dip2px(this, 315f), ViewGroup.LayoutParams.WRAP_CONTENT)
         dialog.setContentView(inflate, layoutParams)
         dialog.window?.setBackgroundDrawableResource(R.drawable.exit_dialog_bg)
         dialog.window?.setGravity(Gravity.CENTER)
