@@ -39,6 +39,8 @@ class WebH5Activity : SetActionBarActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val url = intent.getStringExtra("url")
+        val title = intent.getStringExtra("title")
+        binding.titleTv.text = title
         supportActionBar?.hide()
         actionBar?.hide()
         val settings = binding.webH5.settings

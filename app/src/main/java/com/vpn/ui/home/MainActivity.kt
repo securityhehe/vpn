@@ -17,6 +17,7 @@ import com.vpn.adapter.MenuListRVAdapter
 import com.vpn.bean.MenuItem
 import com.vpn.databinding.LogoutDialogBinding
 import com.vpn.databinding.MainActivityBinding
+import com.vpn.ui.abount.AboutActivity
 import com.vpn.ui.service.SelectServerActivity
 import com.vpn.ui.webview.WebH5Activity
 import com.vpn.utils.Constants.ABOUT
@@ -34,12 +35,7 @@ class MainActivity : SetActionBarActivity(), NavItemClickListener {
     private var menuList: ArrayList<MenuItem> = arrayListOf(
         MenuItem(R.mipmap.main_menu_share, R.string.menu_share, R.mipmap.menu_go, SHARE),
         MenuItem(R.mipmap.main_menu_faq, R.string.menu_faq, R.mipmap.menu_go, FAQ),
-        MenuItem(
-            R.mipmap.main_menu_privcy_private,
-            R.string.menu_privacy_policy,
-            R.mipmap.menu_go,
-            PRIVACY_POLICY
-        ),
+        MenuItem( R.mipmap.main_menu_privcy_private, R.string.menu_privacy_policy, R.mipmap.menu_go, PRIVACY_POLICY ),
         MenuItem(R.mipmap.main_menu_info, R.string.menu_about, R.mipmap.menu_go, ABOUT),
         MenuItem(R.mipmap.main_menu_logout, R.string.menu_exit, R.mipmap.menu_go, EXIT)
     )
@@ -84,17 +80,18 @@ class MainActivity : SetActionBarActivity(), NavItemClickListener {
             }
             FAQ -> {
                 val intent = Intent(this, WebH5Activity::class.java)
-                intent.putExtra("url", "https://www.baidu.com")
+                intent.putExtra("url", "https://www.fastproxy.live/text/FAQ.html")
+                intent.putExtra("title", "FAQ")
                 startActivity(intent)
             }
             PRIVACY_POLICY -> {
-                val intent = Intent(this, WebH5Activity::class.java)
-                intent.putExtra("url", "https://www.baidu.com")
-                startActivity(intent)
+                val intent = Intent(this@MainActivity,WebH5Activity::class.java)
+                intent.putExtra("url", "https://www.fastproxy.live/text/pfp-word-p.html")
+                intent.putExtra("title", "Privacy policy")
+                startActivity(intent);
             }
             ABOUT -> {
-                val intent = Intent(this, WebH5Activity::class.java)
-                intent.putExtra("url", "https://www.baidu.com")
+                val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
             }
             EXIT -> {

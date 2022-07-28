@@ -31,6 +31,8 @@
         <activity android:name=".ui.home.MainActivity"/>
         <activity android:name=".ui.webview.WebH5Activity"/>
         <activity android:name=".ui.service.SelectServerActivity"/>
+        <activity android:name=".ui.private.PrivateActivity"/>
+        <activity android:name=".ui.abount.AboutActivity"/>
     </application>
 
 </manifest>

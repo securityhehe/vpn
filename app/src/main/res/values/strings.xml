@@ -28,6 +28,6 @@
     <string name="menu_exit">Exit</string>
     <string name="exit_yes">Yes</string>
     <string name="server_yes">Replace</string>
-
+    <string name="app_version">Private-Fast Proxy V%s</string>
 
 </resources>

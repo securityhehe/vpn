@@ -18,6 +18,14 @@ object KVUtils {
         Stander.mmkv().encode(SERVER_OVPN_PASSWORD, server.ovpnUserPassword)
     }
 
+    fun isReadPrivate(): Boolean {
+        return Stander.mmkv().decodeBool(PRIV)
+    }
+
+    fun savePrivate() {
+        Stander.mmkv().encode(PRIV,true)
+    }
+
     /**
      * Get server data from shared preference
      * @return server model object
@@ -31,12 +39,13 @@ object KVUtils {
             Stander.mmkv().decodeString(SERVER_OVPN_PASSWORD, "vpn")
         )
 
-        private const val APP_PREFS_NAME = "CakeVPNPreference"
-        private const val SERVER_COUNTRY = "server_country"
-        private const val SERVER_FLAG = "server_flag"
-        private const val SERVER_OVPN = "server_ovpn"
-        private const val SERVER_OVPN_USER = "server_ovpn_user"
-        private const val SERVER_OVPN_PASSWORD = "server_ovpn_password"
+    private const val APP_PREFS_NAME = "CakeVPNPreference"
+    private const val SERVER_COUNTRY = "server_country"
+    private const val SERVER_FLAG = "server_flag"
+    private const val SERVER_OVPN = "server_ovpn"
+    private const val SERVER_OVPN_USER = "server_ovpn_user"
+    private const val SERVER_OVPN_PASSWORD = "server_ovpn_password"
+    private const val PRIV = "isReadPrv";
 
 
 }
